@@ -235,4 +235,4 @@ O projeto contempla o planejamento, implantação, configuração, testes e docu
 
 Este repositório está licenciado sob a **MIT License**.
 
-O OpenProject é um software de terceiros e permanece sujeito à sua própria licença e respectivos termos.
+O OpenProject é um software de terceiros e permanece sujeito à sua própria licença e respectivos termos. 
