@@ -72,6 +72,7 @@ A arquitetura do projeto será composta pelos principais componentes necessário
 | OpenProject | Plataforma de gerenciamento de projetos |
 | Docker      | Conteinerização dos serviços            |
 | PostgreSQL  | Banco de dados                          |
+| Redis       | Cache/Sessão                            |
 | Nginx       | Reverse proxy e gerenciamento de acesso |
 | Linux       | Sistema operacional da infraestrutura   |
 | Git         | Controle de versão                      |
