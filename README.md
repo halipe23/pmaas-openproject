@@ -36,29 +36,12 @@ Disponibilizar uma plataforma de **Project Management as a Service (PMaaS)** bas
 
 A arquitetura do projeto será composta pelos principais componentes necessários para disponibilização da plataforma PMaaS.
 
-```text
-                    USUÁRIOS
-                        │
-                      HTTPS
-                        │
-                        ▼
-               ┌─────────────────┐
-               │      Nginx      │
-               │  Reverse Proxy  │
-               └────────┬────────┘
-                        │
-                        ▼
-               ┌─────────────────┐
-               │   OpenProject   │
-               │      PMaaS      │
-               └────────┬────────┘
-                        │
-                        │ Rede interna
-                        ▼
-               ┌─────────────────┐
-               │   PostgreSQL    │
-               │    Database     │
-               └─────────────────┘
+```mermaid
+flowchart TD
+    Usuarios[USUÁRIOS] -->|HTTPS| Nginx["Nginx<br/>Reverse Proxy"]
+    Nginx --> OpenProject["OpenProject<br/>PMaaS"]
+    OpenProject -->|Rede interna| PostgreSQL["PostgreSQL<br/>Database"]
+    PostgreSQL --> Redis[Redis]
 ```
 
 > **Status:** arquitetura em desenvolvimento e sujeita a alterações durante a implantação.
