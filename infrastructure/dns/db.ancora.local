@@ -1,0 +1,24 @@
+$TTL    604800
+@       IN      SOA     ns1.ancora.local. admin.ancora.local. (
+                             13        ; Serial (incrementado)
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+; Servidor de Nomes
+@       IN      NS      ns1.ancora.local.
+
+; Endereço do Servidor DNS
+ns1     IN      A       {IP}
+
+; Apontamento Raiz
+@       IN      A       {IP}
+
+; Subdomínios dos Setores apontando para o IP do Load Balancer
+presidencia IN  A       {IP}
+engenharia  IN  A       {IP}
+comercial   IN  A       {IP}
+
+; Coringa
+*           IN  A       {IP}
