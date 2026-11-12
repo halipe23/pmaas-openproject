@@ -70,7 +70,6 @@ openproject-pmaas/
 │
 ├── docs/                # Documentação técnica
 ├── infrastructure/     # Arquivos de infraestrutura
-├── diagrams/            # Diagramas da arquitetura
 ├── screenshots/         # Evidências visuais da implantação
 ├── tests/               # Testes e validações
 │
