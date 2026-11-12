@@ -121,19 +121,23 @@ Informações sensíveis, credenciais e arquivos de configuração contendo segr
 
 A plataforma será estruturada considerando um modelo de **multi-tenancy lógico**, permitindo a utilização do serviço por diferentes clientes ou departamentos.
 
-A estratégia busca garantir que cada usuário tenha acesso somente aos projetos e recursos correspondentes às suas permissões.
+A estratégia busca garantir que cada usuário tenha acesso somente aos projetos e recursos correspondentes às suas permissões, garantindo também redundância.
 
-```text
-                    PMaaS
-                      │
-            ┌─────────┴─────────┐
-            │                   │
-        Cliente A           Cliente B
-            │                   │
-        Projeto A           Projeto B
-            │                   │
-       Usuários A          Usuários B
-```
+ ```mermaid
+flowchart TD
+    Nginx --- PmaaS_A[PmaaS]
+    Nginx --- PmaaS_B[PmaaS]
+
+    PmaaS_A --- Cliente_A[Cliente A]
+    Cliente_A --- Projeto_A[Projeto A]
+    Projeto_A --- Usuarios_A[Usuários A]
+
+    PmaaS_B --- Cliente_B[Cliente B]
+    Cliente_B --- Projeto_B[Projeto B]
+    Projeto_B --- Usuarios_B[Usuários B]
+
+    Usuarios_A --- BD
+    Usuarios_B --- BD
 
 Os mecanismos de isolamento e controle de acesso serão validados através de testes específicos.
 
@@ -184,10 +188,8 @@ A documentação técnica do projeto será organizada nas seguintes áreas:
 * Infraestrutura;
 * Implantação;
 * Configuração;
-* Segurança;
-* Multi-tenancy;
 * Testes;
-* Operação e manutenção.
+* Manual Operacional e manutenção.
 
 ---
 
@@ -199,12 +201,12 @@ A documentação técnica do projeto será organizada nas seguintes áreas:
 
 * [x] Criação do repositório
 * [x] Definição inicial da arquitetura
-* [ ] Preparação da infraestrutura
-* [ ] Configuração do Docker
-* [ ] Implantação do OpenProject
-* [ ] Configuração do banco de dados
-* [ ] Configuração de usuários e permissões
-* [ ] Implementação do isolamento lógico
+* [x] Preparação da infraestrutura
+* [x] Configuração do Docker
+* [x] Implantação do OpenProject
+* [x] Configuração do banco de dados
+* [x] Configuração de usuários e permissões
+* [x] Implementação do isolamento lógico
 * [ ] Configuração de segurança
 * [ ] Testes
 * [ ] Documentação final
