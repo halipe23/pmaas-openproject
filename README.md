@@ -121,7 +121,7 @@ Informações sensíveis, credenciais e arquivos de configuração contendo segr
 
 A plataforma será estruturada considerando um modelo de **multi-tenancy lógico**, permitindo a utilização do serviço por diferentes clientes ou departamentos.
 
-A estratégia busca garantir que cada usuário tenha acesso somente aos projetos e recursos correspondentes às suas permissões, garantindo também redundância.
+A estratégia busca garantir que cada usuário tenha acesso somente aos projetos e recursos correspondentes às suas permissões.
 
  ```mermaid
 flowchart TD
