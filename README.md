@@ -138,6 +138,7 @@ flowchart TD
 
     Usuarios_A --- BD
     Usuarios_B --- BD
+ ```
 
 Os mecanismos de isolamento e controle de acesso serão validados através de testes específicos.
 
